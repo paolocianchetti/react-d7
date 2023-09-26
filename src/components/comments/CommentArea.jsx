@@ -5,15 +5,14 @@ import AddComment from './AddComment';
 import CommentsList from './CommentsList';
 import useFetchComments from '../../hooks/useFetchComments';
 
-const API_URL = "https://striveschool-api.herokuapp.com/api/comments/";
+const API_URL = "https://striveschool-api.herokuapp.com/api/comments/"
 
 export default function CommentArea({ isbn }) {
-    const [show, setShow] = useState(true);
-
-    const { reviews, comments, rates, authors, loading, error } = useFetchComments(API_URL, isbn);
+    const [show, setShow] = useState(true)
+    const { reviews, loading, error } = useFetchComments(API_URL, isbn)
 
     const handleClose = () => {
-        setShow(false);
+        setShow(false)
     }
 
     return (
@@ -35,8 +34,13 @@ export default function CommentArea({ isbn }) {
                                 data-testid="loader"
                             />
                         )}
-                        {!loading && !error && comments && rates && authors &&
-                            <CommentsList arrReviews={reviews} arrComments={comments} arrRates={rates} arrAuthors={authors} />}
+                        {!loading && !error && reviews &&
+                            <CommentsList Reviews={reviews}
+                                Comments={reviews.map(review => review.comment)}
+                                Rates={reviews.map(review => review.rate)}
+                                Authors={reviews.map(review => review.author)}
+                            />
+                        }
                     </ListGroup>
                     {!error && <AddComment bookId={isbn}/>}
                 </Modal.Body>

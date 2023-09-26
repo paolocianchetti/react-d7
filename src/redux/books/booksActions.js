@@ -23,10 +23,10 @@ export const fetchBooksFailure = (error) => {
     }
 }
 
-export const fetchBooks = () => {
+export const fetchBooks = (bookId) => {
     return (dispatch) => {
         dispatch(fetchBooksRequest)
-        axios.get(API_FETCH)
+        axios.get(API_FETCH + bookId)
             .then(response => {
                 const books = response.data.slice(0, 150)
                 dispatch(fetchBooksSuccess(books))

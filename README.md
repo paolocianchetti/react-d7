@@ -1,10 +1,6 @@
 # Continuiamo a lavorare su EPICBOOKS!
 
-1. Implementato meccanismo di Redux per chiamata fetch al server per ottenere i dati dei libri. Non vengono più renderizzati dal file .json locale. In questo modo l'array dei libri, lo stato di caricamento e il messaggio di errore sono contenuti nello Store.
-
-2. Tutte le altre funzionalità vanno però riviste... per il momento non funzionano...
-
-3. Inoltre va richiesto un nuovo TOKEN per la fetch delle recensioni...
+1. Implementato meccanismo di Redux per chiamata fetch al server per ottenere i dati dei libri. Non vengono più renderizzati dal file fantasy.json locale. In questo modo l'array dei libri, lo stato di caricamento e il messaggio di errore sono contenuti nello Store.
 
 # Getting Started with Create React App
 

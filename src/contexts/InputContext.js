@@ -1,10 +1,9 @@
-/* import React, { useState, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
 export const Input = createContext();
 
 const InputContext = ({ children }) => {
     const [query, setQuery] = useState('');
-    console.log('Query inside InputContext: ', query);
 
     return (
         <Input.Provider value={{ query, setQuery }}>
@@ -13,4 +12,4 @@ const InputContext = ({ children }) => {
     );
 };
 
-export default InputContext; */
+export default InputContext;

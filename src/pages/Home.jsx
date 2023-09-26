@@ -6,25 +6,19 @@ import Welcome from '../components/welcome/Welcome';
 import LatestRelease from '../components/latestRelease/LatestRelease';
 import MyFooter from '../components/footer/MyFooter';
 import { navLinks } from '../data/navLinks';
-//import InputContext from '../contexts/InputContext';
-//import useFetchBooks from '../hooks/useFetchBooks';
-
-//const API_URL = 'https://epibooks.onrender.com';
+import InputContext from '../contexts/InputContext';
 
 const Home = () => {
-  //const { books } = useFetchBooks(API_URL);
-
   return (
     <>
-      {/* <InputContext> */}
       <Provider store={store}>
-        <MyNav links={navLinks} />
-        <Welcome />
-        <LatestRelease />
-        <MyFooter />
+        <InputContext>
+          <MyNav links={navLinks} />
+          <Welcome />
+          <LatestRelease />
+          <MyFooter />
+        </InputContext>
       </Provider>
-        {/* <LatestRelease fantasyBooks={books} /> */}
-      {/* </InputContext> */}
     </>
   );
 }

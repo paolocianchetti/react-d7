@@ -8,8 +8,6 @@ const AddComment = ({bookId}) => {
     const [rate, setRate] = useState(0);
     const [error, setError] = useState(null);
 
-    console.log('error: ', error);
-
     const postComment = async (e) => {
         e.preventDefault();
 
@@ -27,7 +25,7 @@ const AddComment = ({bookId}) => {
                     "elementId": bookId
                 }),
                 headers: {
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ODU1ZWRmZmI4YjAwMTQ0MTNiYjIiLCJpYXQiOjE2OTQzNjQ3OTYsImV4cCI6MTY5NTU3NDM5Nn0.16sAAVKn7f8QVmIfH3kups2pEzrt2nDmfJS-IKFhLyg",
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU0ODU1ZWRmZmI4YjAwMTQ0MTNiYjIiLCJpYXQiOjE2OTU3Mjg2OTYsImV4cCI6MTY5NjkzODI5Nn0.9LhZreLQk35RcsMqqr4vrbINmOT6K2FIVvUhNofMtis",
                     "Content-type": "application/json"
                 }
             })
@@ -40,7 +38,7 @@ const AddComment = ({bookId}) => {
         } catch (err) {
             if (err) {
                 setError(err);
-                alert(err);
+                alert(error);
                 window.location.reload();
             }
         }

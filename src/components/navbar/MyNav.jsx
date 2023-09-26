@@ -1,23 +1,21 @@
 import React, { useState, useContext } from 'react';
 import { Container, Navbar, Nav, Form, Button } from 'react-bootstrap';
 import { nanoid } from 'nanoid';
-//import { Input } from '../../contexts/InputContext';
+import { Input } from '../../contexts/InputContext';
 
 export default function MyNav({ links }) {
-    //const [inputString, setInputString] = useState('');
-    //const { query, setQuery } = useContext(Input);
+    const [inputString, setInputString] = useState('');
+    const { query, setQuery } = useContext(Input);
 
-    //console.log('Query inside MyNav: ', query);
-
-    /* const handleSearch = (event) => {
+    const handleSearch = (event) => {
         event.preventDefault();
         setQuery(inputString);
-    } */
+    }
 
-    /* const handleInputChange = (event) => {
+    const handleInputChange = (event) => {
         const { value } = event.target;
         setInputString(value);
-    } */
+    }
 
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -37,14 +35,15 @@ export default function MyNav({ links }) {
                     </Nav>
                 </Navbar.Collapse>
 
-                <Form className="d-flex justify-content-between" onSubmit={console.log('handleSearch')}>
+                <Form className="d-flex justify-content-between" onSubmit={handleSearch}>
                     <Form.Control className='mx-2'
                         type="text"
                         name="searchValue"
                         placeholder="inserisci titolo"
-                        onChange={console.log('handleInputChange')}
+                        value={inputString}
+                        onChange={handleInputChange}
                     />
-                    <Button variant="outline-success" type="submit">
+                    <Button variant="outline-success" type="submit" value={query}>
                         Cerca
                     </Button>
                 </Form>
